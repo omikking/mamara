@@ -1,0 +1,39 @@
+<div class="content-container">
+    
+    <div class="tab-content-wrapper">
+        
+        <div class="content-action-row">
+            <p>Image Detection AI</p>
+            <button class="edit-button" >
+                Edit model details
+            </button>
+        </div>
+
+        <div class="model-details-card">
+            <div class="detail-item">
+                <span class="detail-value">{{model.version}}</span>
+                <span class="detail-label">Current Version</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-value">{{ model.deploymentDate }}</span>
+                <span class="detail-label">Deployment Date</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-value">{{ model.lastUpdated }}</span>
+                <span class="detail-label">Last Updated</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-status detail-value">
+                    <span [ngClass]="model.status=='Active'?'active status':'inactive status'">{{ model.status }}</span>
+                </span>
+                <span class="detail-label">Status</span>
+            </div>
+        </div>
+
+    </div>
+</div>
+<p class="key">Key Health Indicators</p>
+<app-table *ngIf="!loading; else load" [columns]="healthColumns" [dataSource]="health"></app-table>
+<ng-template #load>
+    <app-loader></app-loader>
+</ng-template>

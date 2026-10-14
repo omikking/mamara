@@ -1,0 +1,163 @@
+/* Define the custom green color for consistency */
+:root {
+  --custom-green: #008f39; 
+  --text-dark: #333;
+  --border-gray: #e0e0e0; 
+}
+
+/* 1. Main Header Container Styling */
+.app-header-container {
+  display: flex;
+  justify-content: space-between; /* Pushes left and right sections apart */
+  align-items: center;
+  height: 64px; /* Standard header height */
+  background: white; 
+  padding: 0 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+/* 2. Left Content (Button + Title) */
+.header-left-content {
+  display: flex;
+  align-items: center;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: var(--text-dark);
+  cursor: pointer;
+  padding: 0;
+  margin-right: 12px;
+  line-height: 1; /* Aligns the arrow vertically */
+}
+
+.header-title {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+/* 3. Right Content (Navigation Tabs) */
+.header-right-content {
+  /* Aligns the tab bar vertically */
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.custom-tab-nav {
+  display: flex;
+  height: 100%;
+}
+
+.nav-tab {
+  /* Base styling for the tabs */
+  text-decoration: none;
+  color: #666; 
+  font-size: 16px;
+  font-weight: 500;
+  padding: 0 16px;
+  cursor: pointer;
+  position: relative; /* Essential for the active underline */
+  display: flex; /* To vertically center text within the tab height */
+  align-items: center; 
+  transition: color 0.3s ease;
+}
+
+.nav-tab:hover {
+  color: var(--text-dark);
+}
+.demo-chart{
+    height: 400px;
+    width: 100%;
+}
+/* Active Tab Styling */
+.nav-tab.active {
+  color: black;
+  text-decoration: underline; /* Active text color */
+  text-decoration-thickness: 2px;
+  text-decoration-color: #008f39;
+  font-weight: 600;
+  text-underline-offset: 25px;
+}
+
+/* Active Tab Underline using pseudo-element */
+.nav-tab.active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  /* Adjust bottom to place the underline at the very bottom of the 64px header */
+  bottom: 0; 
+  height: 2px;
+  background-color: var(--custom-green); /* Green underline color */
+}
+
+/* Content Area Styling */
+.content-container {
+    padding: 20px;
+}
+
+/* src/app/walking-chart/walking-chart.component.css */
+
+.chart-container {
+  width: 100%;
+  max-width: 800px; /* Adjust this to match your image's aspect ratio or desired size */
+  margin: 20px auto;
+  position: relative; /* Important for positioning text if needed */
+  padding-bottom: 100%; /* For a 1:1 aspect ratio, adjust for your image */
+  height: 0; /* Clear height for aspect ratio padding trick */
+  background-image: url('../../../assets/house-top-view.png'); /* ⬅️ Your image path */
+  background-size: contain; /* Scale image down to fit */
+  background-repeat: no-repeat;
+  background-position: center; /* Center the image */
+  background-color: #f0f0f01f; /* Fallback background color */
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+#back{
+  background-image: url('../../../assets/house-top-view.png');
+}
+
+*/
+        #map-container {
+            position: relative;
+            width: 800px; /* Match your image width */
+            height: 500px; /* Match your image height */
+            margin: 20px auto;
+        }
+
+        /* * 2. The image acts as the background.
+         */
+        #back{
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        /*
+         * 3. The SVG is placed directly over the image.
+         * 'position: absolute' and 'pointer-events: none' are crucial.
+         * 'pointer-events: none' allows clicks to go through to the image/elements beneath.
+         */
+        #travel-path-svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; /* Prevents the SVG from blocking mouse events */
+        }
+
+.echart-map {
+  position: absolute; /* Make the chart absolute to overlay */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* Fill the parent container */
+  background-color: rgba(255, 255, 255, 0); /* ⬅️ Make ECharts background transparent */
+  /* This is crucial for seeing the image through the chart */
+}

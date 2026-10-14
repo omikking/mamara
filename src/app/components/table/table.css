@@ -1,0 +1,73 @@
+table {
+  width: 100%;
+  overflow-x: auto;
+}
+
+button {
+  margin-right: 8px;
+}
+
+[mat-cell] {
+  border: none;
+    color: gray;
+    width: 200px; 
+    /* You must define a fixed width or max-width */
+    
+    /* The three mandatory properties */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+[mat-header-cell]{
+    position: sticky;
+    top: 0;
+    font-weight: 500;
+    width: 200px;
+     /* You must define a fixed width or max-width */
+    
+    /* The three mandatory properties */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+mat-icon{
+    font-size: medium;
+}
+.playpause{
+    margin: 0;
+    padding: 0;
+}
+.mat-elevation-z8 {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.12), 0px 6px 20px rgba(0, 0, 0, 0.08);
+}
+.data{
+    font-size:small;
+}
+.status{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2px;;
+    padding: 5px;
+    font-weight: 600;
+    width: 80px;
+}
+.warning{
+    color: rgb(90, 90, 15);
+    background-color: lightyellow;
+}
+
+.active{
+    color: rgb(14, 83, 14);
+    background-color: rgb(204, 243, 204);
+}
+.inactive{
+    color: rgb(75, 17, 17);
+    background-color: rgb(241, 206, 206);
+}
+button {
+  background-color: transparent;
+  border: none;
+  font-size: 48px; /* Adjust icon size */
+  cursor: pointer;
+}

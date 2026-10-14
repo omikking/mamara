@@ -1,0 +1,111 @@
+.content-container {
+    padding: 0 20px 20px 20px;
+}
+
+.content-action-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 15px;
+}
+
+.content-main-title {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.edit-button {
+    background-color: white;
+    border: 1px solid black;
+    color: #008f39;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.edit-button:hover {
+    background-color: #f0fdf4; /* Slightly lighter green background on hover */
+}
+
+/* Model Details Card */
+.model-details-card {
+    display: flex;
+    justify-content: space-around;
+    background-color: white;
+    border: 1px solid var(--border-gray);
+    border-radius: 4px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 40px; /* Space between each column */
+    line-height: 1.4;
+}
+
+.detail-value {
+    font-size: 16px;
+    font-weight: 500; /* Bolder value text */
+    color: black;
+    margin-bottom: 4px;
+}
+
+.detail-label {
+    font-size: 13px;
+    color: #888; /* Lighter color for label */
+    font-weight: 400;
+}
+.key{
+    font-size: x-large;
+}
+
+.status{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2px;;
+    padding: 2px;
+    font-weight: 600;
+    width: 80px;
+    
+}
+p{
+    font-size: large;
+}
+.active{
+    color: rgb(14, 83, 14);
+    background-color: rgb(204, 243, 204);
+}
+.inactive{
+    color: rgb(75, 17, 17);
+    background-color: rgb(241, 206, 206);
+}
+
+/* Status Badge Styling */
+.detail-status {
+    /* Container to hold the badge in the grid */
+    height: 16px; /* Match the line height for alignment */
+    display: flex;
+    align-items: center;
+    margin: 5px;
+}
+
+.status-badge {
+    padding: 4px 8px;
+    border-radius: 20px; /* Pill shape */
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.status-active {
+    background-color: var(--status-green-light);
+    color: var(--custom-green);
+}

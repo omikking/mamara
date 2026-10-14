@@ -1,0 +1,74 @@
+<div class="app-header-container">
+  <div class="header-left-content">
+    <button class="back-button">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <span class="header-title">Image Detection: AI</span>
+  </div>
+
+  <div class="header-right-content">
+    <nav class="custom-tab-nav">
+      <a
+        href="#"
+        class="nav-tab"
+        [class.active]="imagedetection.activeView === 'overview'"
+        (click)="$event.preventDefault(); setActiveView('overview')"
+      >
+        Overview
+      </a>
+
+      <a
+        href="#"
+        class="nav-tab"
+        [class.active]="imagedetection.activeView === 'versions'"
+        (click)="$event.preventDefault(); setActiveView('versions')"
+      >
+        Versions
+      </a>
+
+      <a
+        href="#"
+        class="nav-tab"
+        [class.active]="imagedetection.activeView === 'dataset'"
+        (click)="$event.preventDefault(); setActiveView('dataset')"
+      >
+        Dataset
+      </a>
+
+      <a
+        href="#"
+        class="nav-tab"
+        [class.active]="imagedetection.activeView === 'inference'"
+        (click)="$event.preventDefault(); setActiveView('inference')"
+      >
+        Inference
+      </a>
+    </nav>
+  </div>
+</div>
+
+<div class="content-container">
+  <div *ngIf="imagedetection.activeView === 'overview'">
+    <app-model-overview></app-model-overview>
+  </div>
+  <div *ngIf="imagedetection.activeView === 'versions'">
+    <app-versions></app-versions>
+  </div>
+  <div *ngIf="imagedetection.activeView === 'dataset'">
+    <div id="map-container">
+    <img id="back"  alt="Travel Map">
+
+    <svg #travelSvg id="travel-path-svg"></svg>
+    </div>
+  </div>
+  <div *ngIf="imagedetection.activeView === 'inference'">
+    <div class="chart-container">
+      <div
+        echarts
+        [options]="chartOptions"
+        [autoResize]="true"
+        class="echart-map"
+      ></div>
+    </div>
+  </div>
+</div>

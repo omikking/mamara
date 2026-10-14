@@ -1,0 +1,40 @@
+<!-- <ng-container *ngIf="toggle.isopen"> -->
+    @if (toggle.isopen) {
+        <div class="overlay" (click)="cancel()">
+            <!-- Modal Card -->
+            <div class="card" (click)="$event.stopPropagation()">  
+                <!-- Header -->
+                <div class="header">
+                    <h3 class="title">{{data.status=='Active' ? 'Deactivate Model Version':'Activate Model Version'}}</h3>
+                    <!-- Close Button (X icon using SVG) -->
+                    <button (click)="cancel()" class="close">
+                        <mat-icon>close</mat-icon>
+                    </button>
+                </div>
+                
+                <!-- Body Content -->
+                <div class="body">
+                    <p class="text">Are you sure you want to deactivate version 
+                        <span class="version">?</span>
+                    </p>
+                    <p class="detail">Deactivation will stop this version from serving predictions until you activate another version.</p>
+                    <p class="warning">This cannot be undone.</p>
+                </div>
+                
+                <!-- Footer (Buttons) -->
+                <div class="footer">
+                    <button (click)="cancel()" class="btn cancel">
+                        Cancel
+                    </button>
+                    
+                    <button *ngIf="data.status=='Active'" (click)="deactivate()" class="btn deactivate">
+                        Deactivate
+                    </button>
+                    <button *ngIf="data.status=='Inactive'" (click)="activate()" class="btn deactivate">
+                        Activate
+                    </button>
+                </div>
+            </div>
+        </div>
+    }
+<!-- </ng-container> -->

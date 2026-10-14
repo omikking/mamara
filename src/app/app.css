@@ -1,0 +1,121 @@
+/* Define custom colors */
+:root {
+  --schaeffler-green: #008f39; 
+  --mamara-green: #4caf50; 
+  --toolbar-height: 64px;
+}
+
+/* Main Toolbar Container Styling (mat-toolbar class) */
+.mamara-header {
+  /* Mimic the standard Material toolbar look and background */
+  display: flex;
+  align-items: center;
+  padding: 10px 16px; /* Standard toolbar padding */
+  height: var(--toolbar-height);
+  background-color: white; 
+  /* Mimic Material shadow */
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 
+              0 4px 5px 0 rgba(0, 0, 0, 0.14), 
+              0 1px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+/* Helper class to push content to the sides (The spacer) */
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+/* --- Left Section Styling (MaMaRa) --- */
+.header-logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-icon {
+  height: 30px; 
+  width: 30px;
+  margin-right: 8px;
+}
+
+.logo-text {
+  font-size: 24px;
+  font-weight: 500;
+  color: black;
+}
+
+/* --- Right Section Styling (Icons and User Info) --- */
+.header-right {
+  display: flex;
+  align-items: center;
+  /* Use margin/padding or the gap property if supported */
+  gap: 15px; /* Spacing between main right-hand elements */
+}
+
+/* Notification Button (mat-icon-button) */
+.notification-button {
+  position: relative;
+  color: black;
+  /* Reset button styling if not using Angular Material's mat-icon-button */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  height: 40px; /* Standard size for icon buttons */
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Red Notification Badge */
+.badge-red {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  height: 12px;
+  width: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 8px;
+  font-weight: bold;
+  line-height: 1;
+  padding: 2px;
+}
+
+/* Language and User Profile Styles */
+.language-selector,
+.user-profile {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  /* Ensure icons and text are vertically centered */
+}
+
+.icon-globe, .icon-user {
+  margin-right: 4px;
+  /* If using mat-icon, these styles apply to the mat-icon element */
+}
+
+.icon-globe {
+    color: #008f39 /* Green globe icon */
+}
+
+.icon-user {
+    color: lightgray; /* Gray user icon */
+}
+
+/* SCHAEFFLER Logo/Text Block */
+.schaeffler-logo {
+  background-color: white;
+  color: #008f39;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 8px 12px;
+  line-height: 1;
+  border-radius: 2px;
+  text-transform: uppercase; /* Ensure text is capitalized if needed */
+}

@@ -1,0 +1,37 @@
+.overlay {
+        position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.1);
+        display: flex; align-items: center; justify-content: center; z-index: 50;
+    }
+    .card {
+        background-color: white; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        width: 100%; max-width: 384px; margin: 16px; padding: 24px;
+    }
+    .header {
+        display: flex; justify-content: space-between; align-items: center;
+        border-bottom: 1px solid #eee; padding-bottom: 12px; margin-bottom: 16px;
+    }
+    .title { font-size: 20px; font-weight: 600; color: #333; }
+    .close { color: #aaa; transition: color 0.15s; border: none; background-color: transparent;}
+    .close:hover { color: #666; }
+
+    /* Body */
+    .body { display: flex; flex-direction: column; gap: 3px; }
+    .text { font-size: 16px; color: #211e1e; font-weight: 600; margin: 2px;}
+    .version { font-weight: 700; color: #dc3545; }
+    .detail, .warning { font-size: 14px; color: #777; }
+    .warning { font-style: italic; font-weight: 600; margin: 2px;}
+
+    /* Footer / Buttons */
+    .footer { 
+        margin-top: 24px; display: flex; justify-content: flex-end; gap: 12px; 
+    }
+    .btn {
+        padding: 8px 16px; font-weight: 500; border-radius: 6px; cursor: pointer;
+        transition: all 0.2s; border: none;
+    }
+    .cancel { color: #555; background-color: transparent; }
+    .cancel:hover { background-color: #f5f5f5; }
+    .deactivate { 
+        background-color: #dc3545; color: white; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    }
+    .deactivate:hover { background-color: #c82333; }

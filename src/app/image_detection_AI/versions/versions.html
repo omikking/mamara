@@ -1,0 +1,16 @@
+<app-toggle-modal [data]="toggle.data"></app-toggle-modal>
+<div class="main">
+    <div class="header">
+        <p>Versions</p>
+        <div class="search">
+            <mat-icon>search</mat-icon>
+            <input type="text" placeholder="Search By Version Name" class="searchinput" (input)="filterdata($event)" #search>
+        </div>
+    </div>
+    
+<app-table *ngIf="!loading; else load" [columns]="versionColumns" [dataSource]="!search.value?versions:filteredversion"></app-table>
+<ng-template #load>
+    <app-loader></app-loader>
+</ng-template>
+
+</div>

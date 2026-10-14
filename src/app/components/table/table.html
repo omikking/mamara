@@ -1,0 +1,35 @@
+<table mat-table [dataSource]="dataSource">
+  <!-- Generate columns dynamically -->
+    @for (column of columns; track column) {
+  <ng-container [matColumnDef]="column">
+    <th mat-header-cell *matHeaderCellDef>{{ column }}</th>
+    <td mat-cell *matCellDef="let row">
+    @if(column == 'Actions'){ <div>
+        <button class="playpause" (click)="openmodal(row)">
+          <mat-icon>{{
+            row.status == 'Active' ? 'pause' : 'play_arrow'
+          }}</mat-icon>
+        </button>
+        <!-- <button (click)="navigateToOverview(row)">
+          <mat-icon>visibility</mat-icon>
+        </button> -->
+      </div>
+    }
+      <!-- column=='status'?row.status=='Active'?'active status':'inactive status':'' -->
+      <div
+        class="data"
+        [ngClass]="column == 'status' ? switchclass(row.status) : ''"
+      >
+        {{ row[column] }}
+      </div>
+    </td>
+  </ng-container>
+    }
+  <!-- Header & Data Rows -->
+  <tr
+    mat-header-row
+    *matHeaderRowDef="displayedColumns"
+    class="mat-elevation-z8"
+  ></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>

@@ -1,0 +1,21 @@
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 10px;
+    align-items: center;
+}
+
+.searchinput{
+    border: none;
+    padding: 0 10px;
+}
+.search{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+p{
+    font-weight: 400;
+    font-size: large;
+}
